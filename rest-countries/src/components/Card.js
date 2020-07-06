@@ -1,16 +1,19 @@
 import React from 'react';
 
-const Card = ( data ) => {
-    console.log(data)
-    return (
-        <li className="card">
-            <img src={this.props.flag} alt='flag' />
-            <h2>{this.props.name}</h2>
-            <p>Population: {this.props.population}</p>
-            <p>Region: {this.props.region}</p>
-            <p>Capital: {this.props.capital}</p>
-        </li>
-    )
+class Card extends React.Component {
+    render() {
+        console.log(this.props)
+        const { flag, name, population, region, capitol } = this.props
+        return (
+            <li  key={this.props.area} className="card">
+                <img src={flag} alt='flag' />
+                <h2>{name}</h2>
+                <p>Population: {population}</p>
+                <p>Region: {region}</p>
+                <p>Capital: {capitol}</p>
+            </li>
+        )
+    }
 }
 
 export default Card;

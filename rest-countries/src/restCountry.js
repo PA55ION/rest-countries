@@ -1,49 +1,29 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
 
-// const RestCountry = ({city, region})  => {
-//   const [error, setError] = useState(null);
-//   const [data, setData] = useState([]);
-//   const [isLoaded, setIsLoaded] = useState(false);
+const useRestCountryApi = () => {
+    const [data, setData] = useState([]);
+    const [url, setUrl] = useState(`https://restcountries.eu/rest/v2/capital/us`);
+    const [error, setError] = useState(false);
+    const [isLoading, setIsLoading]= useState(false);
 
-//   useEffect(() => {
-//     fetch(`https://restcountries.eu/rest/v2/region/europe`)
-//       .then((res) => res.json())
-//       .then(
-//         (data) => {
-//           console.log('this is return data: ', data);
-//           setIsLoaded(true);
-//           setData(data);
-//         },
-//         (error) => {
-//           setError(error);
-//           setIsLoaded(true);
-//         }
-//       );
-//   }, []);
+    useEffect(() => {
+        const fetchData = async () => {
+            setError(false);
+            setIsLoading(true);
 
-//   if (error) {
-//     return <div>Error: {error.message}</div>;
-//   } 
-  
-//   if (!isLoaded) {
-//     return <div>Loading...</div>;
-//   } 
-//     return (
-//         <>
-//         <ul>
-//         {data.map((data) => (
-//           <li key={data.name}>
-//             <img src={data.flag} alt='flag' />
-//             <h4>{data.name}</h4>
-//             <p>Population: {data.population.toLocaleString('en-US')}</p>
-//             <p>Region: {data.region}</p>
-//             <p>Capital: {data.capital}</p>
-//           </li>
-//         ))}
-//       </ul>
-//       </>
-//     );
-//   }
+            try {
+                const result = await axios(url);
+                setData(result.data);
+            } catch (error) {
+                setError(true);
+            }
+            setIsLoading(false)
+        };
 
+        fetchData();
+    }, [url])
+    return [{ data, isLoading, error }, setUrl];
+}
 
-// export default RestCountry;
+export default useRestCountryApi;
