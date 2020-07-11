@@ -3,22 +3,28 @@ import { func, string } from "prop-types";
 import styled from "styled-components";
 // import { device } from './device';
 
+const Nav = styled.div`
+  background-color: #fff;
+  box-shadow: 0 3px 3px -3px black;
+`;
+
 const Navbar = styled.div`
-  display: flex;
-  overflow: hidden;
-  box-shadow: 0 6px 6px -6px black;
-  text-decoration: none;
-  padding: 16px 14px;
-  font-size: 17px;
+  max-width: 1010px;
+  padding: 20px 20px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
 `;
 
 const Title = styled.div`
     font-size: 18px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-    margin-left: 20px;
+    margin-right: 140px;
 `;
+ 
 
 const Button = styled.button`
     background: ${({ theme }) => theme.gradient};
@@ -29,9 +35,9 @@ const Button = styled.button`
     height: 25px;
     border-radius: 35px;
     position: absolute;
-    right: 0;
-    top: 15px;
-    margin-right: 20px;
+    right: 10%;
+    top: 20px;
+    margin-right: 40px;    
 `;
 
 const Sun = styled.img`
@@ -49,6 +55,7 @@ const Moon = styled.img`
 
 const Toggle = ({ theme, toggleTheme }) => {
   return (
+    <Nav>
     <Navbar>
         <Title>Where in the world ?</Title>
       <Button onClick={toggleTheme}>
@@ -71,6 +78,7 @@ const Toggle = ({ theme, toggleTheme }) => {
         )}
       </Button>
     </Navbar>
+    </Nav>
   );
 };
 

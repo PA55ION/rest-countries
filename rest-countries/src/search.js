@@ -4,14 +4,15 @@ import styled from "styled-components";
 
 const Input = styled.input`
 max-width: 100%;
-width: 58%;
-padding: 14px 55px;
+// width: %;
+padding: 14px 75px;
 text-align: left;
 height: 20px;
 margin: 20px;
-border-radius: 4px;
+border-radius: 6px;
 border: 2px solid #ccc;
 font-family: 'Nunito Sans', sans-serif;
+font-size: 16px;
 color: ${({ theme }) => theme.text}
 background: ${({ theme }) => theme.inputBackground};
 `;
@@ -20,19 +21,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-// const Select = styled.select`
-//   max-width: 100%;
-//   width: 45%;
-//   height: 45px;
-//   padding-left: 12px;
-//   border-radius: 4px;
-//   border: 2px solid #ccc;
-//   margin: 20px;
-//   font-family: "Nunito Sans", sans-serif;
-//   background: ${({ theme }) => theme.inputBackground};
-//   color: ${({ theme }) => theme.text};
-// `;
 
 const Button = styled.a`
   font-size: 24px;
@@ -45,13 +33,13 @@ const Button = styled.a`
 class SearchBox extends React.Component {
   render() {
     console.log(this.props)
-    const {type, value, onChange, onClick, onKeyPress } = this.props
+    const {type, value, onChange, onClick, onKeyPress, onSelect } = this.props
     return (
       <Wrapper>
         <Button 
           onClick={onClick}
         >
-          <ion-icon name="search-outline" className="icon"></ion-icon>
+          <i class="fas fa-search"></i>
         </Button>
         <Input
           placeholder="Search for a country..."
@@ -60,14 +48,6 @@ class SearchBox extends React.Component {
           onChange={onChange}
           onKeyPress={onKeyPress}
         />
-        {/* <Select name="region" value={region} onChange={handleSubmit}>
-          <option>Filter by Region</option>
-          <option value="africa">Africa</option>
-          <option value="america">America</option>
-          <option value="asia">Asia</option>
-          <option value="europe">Europe</option>
-          <option value="oceania">Oceania</option>
-        </Select> */}
       </Wrapper>
     );
 

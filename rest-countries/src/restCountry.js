@@ -4,6 +4,7 @@ import axios from 'axios'
 const useRestCountryApi = () => {
     const [data, setData] = useState([]);
     const [url, setUrl] = useState(`https://restcountries.eu/rest/v2/capital/us`);
+    const [regionUrl, setRegionUrl] = useState(`https://restcountries.eu/rest/v2/region/europe`)
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading]= useState(false);
 
@@ -23,7 +24,27 @@ const useRestCountryApi = () => {
 
         fetchData();
     }, [url])
-    return [{ data, isLoading, error }, setUrl];
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setError(false);
+            setIsLoading(true);
+
+            try {
+                const result = await axios(regionUrl);
+                setData(result.data);
+            } catch (error) {
+                setError(true);
+            }
+            setIsLoading(false)
+        };
+
+        fetchData();
+    }, [regionUrl])
+
+
+    
+    return [{ data, isLoading, error }, setUrl, setRegionUrl];
 }
 
 export default useRestCountryApi;

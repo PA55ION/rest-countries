@@ -8,10 +8,12 @@ import { lightTheme, darkTheme } from "./components/Theme";
 import SearchBox from "./search";
 import Card from "./components/Card";
 import useRestCountryApi from "./restCountry";
+import DropDown from './dropDown';
 
 const App = () => {
-  const [capital, setCapital] = useState("us");
-  const [ { data, error, isLoading }, doFetch ] = useRestCountryApi()
+  const [capital, setCapital] = useState('');
+  const [region, setRegion] = useState('');
+  const [ { data, error, isLoading }, doFetch, fetchRegion] = useRestCountryApi()
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
@@ -35,6 +37,19 @@ const App = () => {
               }
             }}
           />
+          <DropDown 
+            value={region}
+            onChange={(event) => setRegion(event.target.value)}
+            onClick={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
+            }
+            
+            // onKeyPress={event => {
+            //   if (event.key === 'Enter') {
+            //     fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
+            //     console.log('enter press here! ') 
+            //   }
+            // }}
+          />
         </div>
         <React.Fragment>
 
@@ -50,7 +65,7 @@ const App = () => {
                   name={data.name}
                   population={data.population}
                   region={data.region}
-                  capitol={data.capitol}
+                  capital={data.capital}
                 />
               ))}
             </ul>
