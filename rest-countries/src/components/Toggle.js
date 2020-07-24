@@ -6,6 +6,8 @@ import styled from "styled-components";
 const Nav = styled.div`
   background-color: #fff;
   box-shadow: 0 3px 3px -3px black;
+  background: ${({ theme }) => theme.inputBackground};
+
 `;
 
 const Navbar = styled.div`
@@ -16,6 +18,7 @@ const Navbar = styled.div`
   align-items: center;
   margin: 0 auto;
   text-decoration: none;
+  color: ${({theme}) => theme.text}
 `;
 
 const Title = styled.div`
@@ -23,8 +26,10 @@ const Title = styled.div`
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
     margin-right: 140px;
+    color: ${({theme}) => theme.text}
+    background: ${({ theme }) => theme.gradient};
+
 `;
- 
 
 const Button = styled.button`
     background: ${({ theme }) => theme.gradient};
@@ -37,7 +42,7 @@ const Button = styled.button`
     position: absolute;
     right: 10%;
     top: 20px;
-    margin-right: 40px;    
+    margin-right: -30px;    
 `;
 
 const Sun = styled.img`

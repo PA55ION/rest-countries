@@ -40,19 +40,15 @@ const App = () => {
           <DropDown 
             value={region}
             onChange={(event) => setRegion(event.target.value)}
-            onClick={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
-            }
-            
-            // onKeyPress={event => {
-            //   if (event.key === 'Enter') {
-            //     fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
-            //     console.log('enter press here! ') 
-            //   }
-            // }}
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
+                console.log('enter press here! ') 
+              }
+            }}
           />
         </div>
         <React.Fragment>
-
           {error && <div>Something went wrong ...</div>}
           {isLoading ? (
             <div>Loading...</div>

@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 //import RestCountry from "./restCountry";
 
-const Input = styled.input`
+const Input = styled.input.attrs(props => ({
+  type: 'text',
+}))`
 max-width: 100%;
 // width: %;
 padding: 14px 75px;
@@ -13,8 +15,19 @@ border-radius: 6px;
 border: 2px solid #ccc;
 font-family: 'Nunito Sans', sans-serif;
 font-size: 16px;
-color: ${({ theme }) => theme.text}
 background: ${({ theme }) => theme.inputBackground};
+color: ${({ theme }) => theme.text};
+&:focus {
+  border-color: ${({ theme }) => theme.blue};
+}
+::placeholder,
+  ::-webkit-input-placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+  :-ms-input-placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+
 `;
 
 const Wrapper = styled.div`
@@ -33,13 +46,13 @@ const Button = styled.a`
 class SearchBox extends React.Component {
   render() {
     console.log(this.props)
-    const {type, value, onChange, onClick, onKeyPress, onSelect } = this.props
+    const { type, value, onChange, onClick, onKeyPress } = this.props
     return (
       <Wrapper>
         <Button 
           onClick={onClick}
         >
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </Button>
         <Input
           placeholder="Search for a country..."
@@ -50,7 +63,6 @@ class SearchBox extends React.Component {
         />
       </Wrapper>
     );
-
   }
 };
 

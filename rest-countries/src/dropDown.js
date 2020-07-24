@@ -24,9 +24,9 @@ const DropDown = (props) => {
          <Select 
             value={props.region} 
             onChange={props.onChange} 
-            // onClick={props.onClick}
+            onKeyPress={props.onKeyPress}
          >
-            <option value="" selected data-default>Filter by region</option>
+            <option value="" defaultValue>Filter by region</option>
             <option value="africa">Africa</option>
             <option value="america">America</option>
             <option value="asia">Asia</option>
