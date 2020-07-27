@@ -7,3 +7,62 @@ html, body {
 .fa-search {
     padding-top: 7px;
 }
+
+/*card*/
+
+.flag__container {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  @media only screen and(max-width:450px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.flag__img {
+  width: 100%;
+  min-height: 18rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  img {
+    max-width: 100%;
+    align-self: stretch;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
+.flag__content {
+  padding: 2rem;
+  height: 45%;
+  
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+.list__items {
+  list-style: none;
+}
+
+.list__item {
+  font-weight: $medium;
+  font-size: 1.2rem;
+  span {
+    font-weight: $light;
+    color: rgba($very-dark-blue, 0.6);
+  }
+}
+
+/* flag-list  style*/
+

@@ -1,109 +1,139 @@
 import React from 'react';
 import styled from 'styled-components';
-import Skeleton, { SkeletonTheme }  from 'react-loading-skeleton';
+import CardList from './CardList'
 
 import { device } from './device';
 
 const ListItems = styled.div`
-    // display: flex;
     display: inline-block;
-    margin-left: 75px;
-    margin-top: 40px;
-    // max-width: 250px;
-    // height: 100%;
-    // width: 100%;
-    // margin: 30px;
-    // max-height: 350px;
-    // border: 1px solid green;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    // grid-template-columns: auto auto auto auto;
-    flex-direction: row;
-    // grid-gap: 10px;
-    // margin-right: 150px;
-    // margin-top: 4em;
-`;
+    width: 250px;
+    margin: 20px 55px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
 
-const List = styled.div`
-    list-style-type: none;
+    // padding: 10px;
+
+
+    @media only screen and(max-width:450px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background: ${({ theme }) => theme.inputBackground};
-    color: ${({ theme }) => theme.text};
-    border-radius: 10px;
-    // height: 350px;
-    // max-width: 250px;
-    // height: 100%;
-    // width: 100%;
-    // margin: 30px;
-    // max-height: 350px;
-    // margin: 30px 50px;
-    max-width: 250px;
-    // width: 100%;
-    // height: 330px;
-    padding-bottom: 14px;
-    box-shadow: 0 3px 3px -3px black;   
+  }
+
+   
+}
 `;
 
-const Image = styled.img`
-    width: 100%;
-    //max-width: 200px;
-    height: 200px;
-    //height: auto;
-     border-top-left-radius: 10px;
-     border-top-right-radius: 10px;
+const ImageWrapper = styled.div`
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  @media only screen and(max-width:450px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+ 
 `;
 
-const Div = styled.div`
-    // max-height: 150px;
-    width: 100%;
-    max-width: 250px;
+const Image = styled.div`
+  width: 100%;
+  min-height: 9rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  img {
+    max-width: 100%;
+    align-self: stretch;
+  }
 `;
 
-const Header = styled.h2`
-    padding: 2px 30px;
+const Content = styled.div`
+    padding: 1.5rem;
+    width: 200px;
+    height: 85%;
+
+
+`;
+
+const TextContent = styled.div`
+    width: 200px;
+    height: auto;
+
+`
+
+const CountryName = styled.h2`
+    height: 45%;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bolder;
-    white-space: nowrap;
-    width: 80%;
-    overflow: hidden;              
-    -o-text-overflow: ellipsis;    
-    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     
    &:hover {
        cursor: pointer
-
     }
-    
+`;
+
+const Ul = styled.ul`
+`
+
+const Li = styled.li`
 `
 
 const Text = styled.p`
     font-family: 'Nunito Sans', sans-serif;
-    padding-left: 30px;
+    font-size: 16px;
+    line-height: 1;
 `;
 
 class Card extends React.Component {
-    navTo(uri){
-        window.location.href = window.location.origin + uri;
-      }
     render() {
-        const { flag, name, population, region, capital } = this.props
+        const { flag, name, population, region, capital, country } = this.props
         return (
-        // <SkeletonTheme color="#202020" highlightColor="#444">
             <ListItems>
-                <List key={this.props.area} className="card">
-                    <Div>
-                        <Image src={ flag ||  <Skeleton width="100%" height={200} />} alt='flag'></Image>
-                    </Div>
-                    <Header onClick={() => {this.navTo('')}}>{name || <Skeleton width="70%"/>}</Header>
-                    <Text><strong>Population: </strong>{population.toLocaleString('en-US') || <Skeleton width="50%" />}</Text>
-                    <Text><strong>Region: </strong>{region || <Skeleton width="70%" />}</Text>
-                    <Text><strong>Capital: </strong>{capital || <Skeleton width="70%"/>}</Text>
-                </List>
+                <ImageWrapper>
+                    <Image  style={{ backgroundImage: `url(${flag})`, }}></Image>
+                 </ImageWrapper>
+                 <Content>
+                 <TextContent>
+                    <CountryName>{name}</CountryName>
+
+                    {/* <Ul>
+                        <Li>
+                          <strong>Population: </strong> {population.toLocaleString('en-US')}
+                        </Li>
+                        <Li>
+                          <strong>Region: </strong>{region}
+                        </Li>
+                        <Li>
+                          <strong>Capital: </strong>{capital}
+                        </Li>
+                    </Ul> */}
+                    <Text><strong>Population: </strong> {population.toLocaleString('en-US')}</Text>
+                    <Text><strong>Region: </strong>{region}</Text>
+                    <Text><strong>Capital: </strong>{capital}</Text>
+                    </TextContent>
+                 </Content>
             </ListItems>
-        // </SkeletonTheme>
         )
     }
 }
+
+// const Card = ({ countriesList }) => {
+//   return (
+//     <div className="flag__lists u-container">
+//       {countriesList.map((country) => {
+//         return <CardList key={country.alpha2Code} country={country} />;
+//       })}
+//     </div>
+//   );
+// };
 
 export default Card;
 

@@ -3,12 +3,13 @@ import axios from 'axios'
 
 const useRestCountryApi = () => {
     const [data, setData] = useState([]);
-    const [url, setUrl] = useState(`https://restcountries.eu/rest/v2/capital/us`);
-    const [regionUrl, setRegionUrl] = useState(`https://restcountries.eu/rest/v2/region/europe`)
+    const [url, setUrl] = useState();
+    const [regionUrl, setRegionUrl] = useState(`https://restcountries.eu/rest/v2/region/asia`)
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading]= useState(false);
 
     useEffect(() => {
+        // let text = country ? "name/"+country: "all";
         const fetchData = async () => {
             setError(false);
             setIsLoading(true);
@@ -38,12 +39,8 @@ const useRestCountryApi = () => {
             }
             setIsLoading(false)
         };
-
         fetchData();
     }, [regionUrl])
-
-
-
     
     return [{ data, isLoading, error }, setUrl, setRegionUrl];
 }

@@ -1,19 +1,28 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Toggle from "./components/Toggle";
 import { useDarkMode } from "./components/useDarkMode";
 import { GlobalStyles } from "./components/globalStyles";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/Theme";
-import SearchBox from "./search";
-import Card from "./components/Card";
-import useRestCountryApi from "./restCountry";
-import DropDown from './dropDown';
+// import SearchBox from "./search";
+// import Card from "./components/Card";
+// import useRestCountryApi from "./restCountry";
+// import DropDown from './dropDown';
+// import SkeletonCard from './components/SkeletonCard';
+import HomePage from './pages/home';
+import CountryPage from './pages/country'
 
 const App = () => {
-  const [capital, setCapital] = useState('');
-  const [region, setRegion] = useState('');
-  const [ { data, error, isLoading }, doFetch, fetchRegion] = useRestCountryApi()
+  // const [capital, setCapital] = useState('');
+  // const [region, setRegion] = useState('');
+  // const [ { data, error, isLoading }, doFetch, fetchRegion] = useRestCountryApi()
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
@@ -23,50 +32,15 @@ const App = () => {
         <GlobalStyles />
         <div className="app">
           <Toggle theme={theme} toggleTheme={themeToggler} />
-          <SearchBox 
-            type="text"
-            value={capital}
-            onChange={(event) => setCapital(event.target.value)}
-            onClick={() =>
-              doFetch(`https://restcountries.eu/rest/v2/capital/${capital}`)
-            }
-            onKeyPress={event => {
-              if (event.key === 'Enter') {
-                doFetch(`https://restcountries.eu/rest/v2/capital/${capital}`)
-                console.log('enter press here! ') 
-              }
-            }}
-          />
-          <DropDown 
-            value={region}
-            onChange={(event) => setRegion(event.target.value)}
-            onKeyPress={event => {
-              if (event.key === 'Enter') {
-                fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)
-                console.log('enter press here! ') 
-              }
-            }}
-          />
+          <Router>
+          <Switch>
+            <Route exact path="/">
+            <HomePage />
+            </Route>
+            <Route path="/country" component={CountryPage} />
+          </Switch>
+          </Router>
         </div>
-        <React.Fragment>
-          {error && <div>Something went wrong ...</div>}
-          {isLoading ? (
-            <div>Loading...</div>
-          ) : (
-            <ul>
-              {data.map((data) => (
-                <Card
-                  key={data.area}
-                  flag={data.flag}
-                  name={data.name}
-                  population={data.population}
-                  region={data.region}
-                  capital={data.capital}
-                />
-              ))}
-            </ul>
-          )}
-        </React.Fragment>
       </>
     </ThemeProvider>
   );
