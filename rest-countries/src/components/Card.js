@@ -9,9 +9,9 @@ const ListItems = styled.div`
     width: 250px;
     margin: 20px 55px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
-
-    // padding: 10px;
-
+     &:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
 
     @media only screen and(max-width:450px) {
     display: flex;
@@ -27,7 +27,7 @@ const ListItems = styled.div`
 const ImageWrapper = styled.div`
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+//   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
 
   &:hover {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -55,41 +55,33 @@ const Image = styled.div`
 `;
 
 const Content = styled.div`
-    padding: 1.5rem;
+    padding: 1rem;
     width: 200px;
-    height: 85%;
-
-
+    overflow: hidden;
 `;
 
 const TextContent = styled.div`
     width: 200px;
-    height: auto;
-
+    height: 200px;
+    padding: .5rem;
 `
 
 const CountryName = styled.h2`
-    height: 45%;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+
     
    &:hover {
        cursor: pointer
     }
 `;
 
-const Ul = styled.ul`
-`
-
-const Li = styled.li`
-`
-
 const Text = styled.p`
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
-    line-height: 1;
 `;
 
 class Card extends React.Component {
