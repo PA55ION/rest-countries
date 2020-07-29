@@ -11,18 +11,11 @@ import { GlobalStyles } from "./components/globalStyles";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/Theme";
-// import SearchBox from "./search";
-// import Card from "./components/Card";
-// import useRestCountryApi from "./restCountry";
-// import DropDown from './dropDown';
 // import SkeletonCard from './components/SkeletonCard';
 import HomePage from './pages/home';
 import CountryPage from './pages/country'
 
 const App = () => {
-  // const [capital, setCapital] = useState('');
-  // const [region, setRegion] = useState('');
-  // const [ { data, error, isLoading }, doFetch, fetchRegion] = useRestCountryApi()
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
@@ -37,7 +30,7 @@ const App = () => {
             <Route exact path="/">
             <HomePage />
             </Route>
-            <Route path="/country" component={CountryPage} />
+            <Route path="/country/:countryCode" component={CountryPage} />
           </Switch>
           </Router>
         </div>

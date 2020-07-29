@@ -6,10 +6,9 @@ const Input = styled.input.attrs(props => ({
   type: 'text',
 }))`
 max-width: 100%;
-// width: %;
 padding: 14px 75px;
 text-align: left;
-height: 20px;
+height: 45px;
 margin: 20px;
 border-radius: 6px;
 border: 2px solid #ccc;
@@ -39,7 +38,7 @@ const Button = styled.a`
   font-size: 24px;
   position: absolute;
   left: 50px;
-  top: 90px;
+  top: 94px;
   color: #ccc;
 `;
 
@@ -52,7 +51,7 @@ class SearchBox extends React.Component {
         <Button 
           onClick={onClick}
         >
-          <i className="fas fa-search"></i>
+          <ion-icon name="search-outline"></ion-icon>
         </Button>
         <Input
           placeholder="Search for a country..."

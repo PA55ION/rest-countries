@@ -9,7 +9,6 @@ const useRestCountryApi = () => {
     const [isLoading, setIsLoading]= useState(false);
 
     useEffect(() => {
-        // let text = country ? "name/"+country: "all";
         const fetchData = async () => {
             setError(false);
             setIsLoading(true);

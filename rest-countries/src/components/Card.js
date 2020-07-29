@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import CardList from './CardList'
+import { withRouter } from "react-router-dom";
 
 import { device } from './device';
 
 const ListItems = styled.div`
     display: inline-block;
     width: 250px;
-    margin: 20px 55px;
+    margin: 50px 5px 20px 85px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
      &:hover {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -20,14 +20,15 @@ const ListItems = styled.div`
     flex-direction: column;
   }
 
-   
+  @media only screen and(min-width:768px) {
+    margin-left: 300px;
+  }
 }
 `;
 
 const ImageWrapper = styled.div`
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-//   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
 
   &:hover {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -55,14 +56,14 @@ const Image = styled.div`
 `;
 
 const Content = styled.div`
-    padding: 1rem;
+    padding: .5rem 1rem;
     width: 200px;
     overflow: hidden;
 `;
 
 const TextContent = styled.div`
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     padding: .5rem;
 `
 
@@ -73,7 +74,6 @@ const CountryName = styled.h2`
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 
-    
    &:hover {
        cursor: pointer
     }
@@ -84,32 +84,26 @@ const Text = styled.p`
     font-size: 16px;
 `;
 
+
 class Card extends React.Component {
     render() {
-        const { flag, name, population, region, capital, country } = this.props
+        const { flag, name, population, region, capital, match, history, borders, alpha3Code } = this.props
         return (
-            <ListItems>
+            <ListItems onClick={() => {
+            history.push(`${match.path}country/${alpha3Code.toLowerCase()}`);
+            }}>
                 <ImageWrapper>
                     <Image  style={{ backgroundImage: `url(${flag})`, }}></Image>
                  </ImageWrapper>
                  <Content>
                  <TextContent>
                     <CountryName>{name}</CountryName>
-
-                    {/* <Ul>
-                        <Li>
-                          <strong>Population: </strong> {population.toLocaleString('en-US')}
-                        </Li>
-                        <Li>
-                          <strong>Region: </strong>{region}
-                        </Li>
-                        <Li>
-                          <strong>Capital: </strong>{capital}
-                        </Li>
-                    </Ul> */}
                     <Text><strong>Population: </strong> {population.toLocaleString('en-US')}</Text>
                     <Text><strong>Region: </strong>{region}</Text>
                     <Text><strong>Capital: </strong>{capital}</Text>
+                    {/* {borders.map((border, index) => (
+                       <Text key={index}>Border: {border}</Text>
+                    ))} */}
                     </TextContent>
                  </Content>
             </ListItems>
@@ -117,15 +111,5 @@ class Card extends React.Component {
     }
 }
 
-// const Card = ({ countriesList }) => {
-//   return (
-//     <div className="flag__lists u-container">
-//       {countriesList.map((country) => {
-//         return <CardList key={country.alpha2Code} country={country} />;
-//       })}
-//     </div>
-//   );
-// };
-
-export default Card;
+export default withRouter(Card);
 
