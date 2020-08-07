@@ -44,7 +44,6 @@ const Button = styled.a`
 
 class SearchBox extends React.Component {
   render() {
-    console.log(this.props)
     const { type, value, onChange, onClick, onKeyPress } = this.props
     return (
       <Wrapper>

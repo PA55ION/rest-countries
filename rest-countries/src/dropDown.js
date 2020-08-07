@@ -15,8 +15,6 @@ const Select = styled.select`
   color: ${({ theme }) => theme.text};
 `;
 
-
-
 const DropDown = (props) => {
     console.log(props)
     return (
@@ -24,9 +22,9 @@ const DropDown = (props) => {
          <Select 
             value={props.region} 
             onChange={props.onChange} 
-            onPointerLeave ={props.onPointerLeave }
+            onPointerLeave={props.onPointerLeave }
          >
-            <option value="" defaultValue>Filter by region</option>
+            <option>Filter by region</option>
             <option value="africa">Africa</option>
             <option value="americas">Americas</option>
             <option value="asia">Asia</option>

@@ -87,7 +87,7 @@ const Text = styled.p`
 
 class Card extends React.Component {
     render() {
-        const { flag, name, population, region, capital, match, history, borders, alpha3Code } = this.props
+        const { flag, name, population, region, capital, match, history, borders, alpha3Code, code} = this.props
         return (
             <ListItems onClick={() => {
             history.push(`${match.path}country/${alpha3Code.toLowerCase()}`);

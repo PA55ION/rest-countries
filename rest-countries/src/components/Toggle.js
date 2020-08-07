@@ -65,6 +65,7 @@ const Toggle = ({ theme, toggleTheme }) => {
         <Title>Where in the world ?</Title>
       <Button onClick={toggleTheme}>
         {theme === "light" ? (
+        // <ion-icon name="moon-outline"></ion-icon>
           <Sun
             src="https://image.flaticon.com/icons/svg/1164/1164954.svg"
             width="18"
