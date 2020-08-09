@@ -11,7 +11,6 @@ import { GlobalStyles } from "./components/globalStyles";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/Theme";
-// import SkeletonCard from './components/SkeletonCard';
 import HomePage from './pages/home';
 import CountryPage from './pages/country'
 

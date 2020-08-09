@@ -49,6 +49,7 @@ const HomePage = () => {
                   alpha3Code={data.alpha3Code}
                 />
                 ))}
+                {/* <SkeletonCard /> */}
             </React.Fragment>
             </div>
     )

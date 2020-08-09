@@ -9,10 +9,9 @@ const ListItems = styled.div`
     width: 250px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    margin: 75px 0 20px 85px;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+    margin: 75px 0 10px 85px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
      &:hover {
-    // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     animation: pulse;
     animation-duration: 1.5s;
   }
@@ -63,15 +62,14 @@ const Image = styled.div`
 `;
 
 const Content = styled.div`
-    padding: .5rem 1rem;
-    width: 220px;
+    padding: .5rem 2rem;
+    width: 240px;
     overflow: hidden;
 `;
 
 const TextContent = styled.div`
-    width: 230px;
-    height: 200px;
-    padding: .5rem;
+    width: 100%;
+    padding-bottom: 1rem;
 `
 
 const CountryName = styled.h2`
@@ -81,11 +79,11 @@ const CountryName = styled.h2`
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 
+
    &:hover {
        cursor: pointer
     }
 `;
-
 const Text = styled.p`
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
