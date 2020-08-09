@@ -7,16 +7,20 @@ import { device } from './device';
 const ListItems = styled.div`
     display: inline-block;
     width: 250px;
-    margin: 50px 5px 20px 85px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 75px 0 20px 85px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
      &:hover {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: pulse;
+    animation-duration: 1.5s;
   }
 
     @media only screen and(max-width:450px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-center;
+    align-items: space-center;
     flex-direction: column;
   }
 
@@ -27,22 +31,24 @@ const ListItems = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
 
-  &:hover {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  @media only screen and(max-width:450px) {
-    width: 80%;
-    margin: 0 auto;
-  }
- 
+    &:hover {
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    @media only screen and(max-width:450px) {
+      width: 80%;
+      margin: 0 auto;
+    }
 `;
 
 const Image = styled.div`
   width: 100%;
-  min-height: 9rem;
+  min-height: 9em;
+  object-fit: cover;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,20 +56,21 @@ const Image = styled.div`
   border-top-right-radius: 8px;
 
   img {
-    max-width: 100%;
+    width: 100%;
     align-self: stretch;
+    object-fit: cover;
   }
 `;
 
 const Content = styled.div`
     padding: .5rem 1rem;
-    width: 200px;
+    width: 220px;
     overflow: hidden;
 `;
 
 const TextContent = styled.div`
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 200px;
     padding: .5rem;
 `
 
@@ -82,12 +89,12 @@ const CountryName = styled.h2`
 const Text = styled.p`
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
+    line-height: .7;
 `;
-
 
 class Card extends React.Component {
     render() {
-        const { flag, name, population, region, capital, match, history, borders, alpha3Code, code} = this.props
+        const { flag, name, population, region, capital, match, history, alpha3Code } = this.props
         return (
             <ListItems onClick={() => {
             history.push(`${match.path}country/${alpha3Code.toLowerCase()}`);
@@ -101,9 +108,6 @@ class Card extends React.Component {
                     <Text><strong>Population: </strong> {population.toLocaleString('en-US')}</Text>
                     <Text><strong>Region: </strong>{region}</Text>
                     <Text><strong>Capital: </strong>{capital}</Text>
-                    {/* {borders.map((border, index) => (
-                       <Text key={index}>Border: {border}</Text>
-                    ))} */}
                     </TextContent>
                  </Content>
             </ListItems>

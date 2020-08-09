@@ -40,7 +40,6 @@ const HomePage = () => {
              {isLoading && <SkeletonCard />}
               {data.map((data, index) => (
                 <Card
-                  code={data.callingCodes}
                   key={data.index}
                   flag={data.flag}
                   name={data.name}

@@ -2,7 +2,7 @@ export const lightTheme = {
   body: 'hsl(0, 0%, 98%)',
   text: 'hsl(200, 15%, 8%)',
   toggleBorder: '#FFF',
-  background: '#363537',
+  background: 'hsl(0, 0%, 98%)',
   gradient: 'linear-gradient(#39598A, #79D7ED)',
   inputBackground: 'white'
 }
