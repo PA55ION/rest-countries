@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { withRouter } from 'react-router-dom'
 
 const Border = styled.div`
-    width: 125px;
+    width: 105px;
     height: 35px;
+    display: inline-block;
     text-align: center;
     border-radius: 3px;
     margin: 5px;

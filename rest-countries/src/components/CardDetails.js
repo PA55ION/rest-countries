@@ -39,20 +39,20 @@ const CardDetails = ({ info }) => {
       <div className="country-detail">
         <h2>{name}</h2>
         <p>Native Name: <span> {nativeName}</span></p>
-        <p><span>Population:</span> {population}</p>
-        <p><span>Region:</span> {region}</p>
-        <p><span>Sub Region:</span> {subregion}</p>
-        <p><span>Capital:</span> {capital}</p>
+        <p>Population:<span> {population}</span></p>
+        <p>Region:<span> {region}</span></p>
+        <p>Sub Region:<span> {subregion}</span></p>
+        <p>Capital: <span> {capital}</span></p>
       </div>
-      <div className='country-state'>
-        <p>Top level Domain: {topLevelDomain}</p>
+      <div className='country-stat'>
+        <p>Top Level Domain: <span> {topLevelDomain}</span></p>
         <p>
         Currencies:
         {currencies && currencies.map(({name}, code) => {
             if(code === currencies.length - 1) {
-                return <span key={code}>{name}</span>
+                return <span key={code}> {name}</span>
             }
-            return <span key={code}>{name}, </span>
+            return <span key={code}> {name}, </span>
         })}
         </p>
         <p>
@@ -66,10 +66,10 @@ const CardDetails = ({ info }) => {
         </p>
       </div>
       <div className='border-country'>
-        <p>Border Countries:</p>
+      <p>Border Country: </p>
         <div>
             {borders && borders.map((border, index) => (
-                <BorderBtn key={index} code={border} /> 
+               <BorderBtn key={index} code={border} /> 
             ))}
         </div>
       </div>

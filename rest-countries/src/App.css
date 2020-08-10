@@ -20,3 +20,22 @@ html, body {
   right: 5px;
 }
 
+.container {
+  display: grid;
+}
+
+.country-detail, .country-stat, .border-country {
+    padding: 12px 50px;
+}
+
+.border-country {
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+}
+
+span {
+  font-weight: lighter;
+}

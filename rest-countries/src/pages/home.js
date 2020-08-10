@@ -38,7 +38,7 @@ const HomePage = () => {
             />
             <React.Fragment>             
              {isLoading && <SkeletonCard />}
-              {data.map((data, index) => (
+                {data.map((data, index) => (
                 <Card
                   key={data.index}
                   flag={data.flag}
@@ -49,6 +49,8 @@ const HomePage = () => {
                   alpha3Code={data.alpha3Code}
                 />
                 ))}
+             
+           
                 {/* <SkeletonCard /> */}
             </React.Fragment>
             </div>
