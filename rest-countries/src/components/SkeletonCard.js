@@ -8,8 +8,6 @@ const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.element};
   border-radius: 8px;
   transition: 0.3s opacity, 0.3s visibility;
-  opacity: ${({ visible }) => (visible ? '1' : '0')};
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 `;
 
 const Content = styled.div`
@@ -59,7 +57,5 @@ const SkeletonCard = () => {
       </SkeletonTheme>
   );
 };
-
-
 
 export default SkeletonCard;

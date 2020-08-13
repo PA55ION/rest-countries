@@ -8,7 +8,7 @@ const Border = styled.div`
     display: inline-block;
     text-align: center;
     border-radius: 3px;
-    margin: 5px;
+    margin: 0 5px 12px 0;
     padding-top: 5px;
     color: ${({theme}) => theme.text};
     background: ${({theme}) => theme.background};

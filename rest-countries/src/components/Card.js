@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
 
-import { device } from './device';
+// import { device } from './device';
 
 const ListItems = styled.div`
     display: inline-block;
@@ -51,19 +51,22 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 
   img {
     width: 100%;
+
+
     align-self: stretch;
     object-fit: cover;
   }
 `;
 
 const Content = styled.div`
-    padding: .5rem 2rem;
+    padding: .5rem 1.5rem;
     width: 240px;
+    height: 190px;
     overflow: hidden;
 `;
 
@@ -76,7 +79,7 @@ const CountryName = styled.h2`
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bolder;
     font-size: 20px;
-    margin-bottom: 1rem;
+    margin: 1rem 0 .5rem;
     padding-bottom: 0.5rem;
 
 
@@ -87,7 +90,7 @@ const CountryName = styled.h2`
 const Text = styled.p`
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
-    line-height: .7;
+    line-height: 1.6;
 `;
 
 class Card extends React.Component {
@@ -99,13 +102,14 @@ class Card extends React.Component {
             }}>
                 <ImageWrapper>
                     <Image  style={{ backgroundImage: `url(${flag})`, }}></Image>
+                    {/* <Image src={flag} alt={name}></Image> */}
                  </ImageWrapper>
                  <Content>
                  <TextContent>
                     <CountryName>{name}</CountryName>
-                    <Text><strong>Population: </strong> {population.toLocaleString('en-US')}</Text>
-                    <Text><strong>Region: </strong>{region}</Text>
-                    <Text><strong>Capital: </strong>{capital}</Text>
+                    <Text>Population: <span>{population.toLocaleString('en-US')}</span></Text>
+                    <Text>Region: <span>{region}</span></Text>
+                    <Text>Capital: <span className='capital'>{capital}</span></Text>
                     </TextContent>
                  </Content>
             </ListItems>

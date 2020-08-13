@@ -20,10 +20,14 @@ const Div = styled.div`
 const BackButton = ({ history }) => {
     return (
          <Div>
-            <Button onClick={() => history.push('/')}>
+            {/* <Button onClick={() => history.push('/')}>
              <span className="iconify" data-icon="bi:arrow-left" data-inline="false"></span>
              <span className="btn-text">Back</span>
-            </Button>
+            </Button> */}
+            <button onClick={() => history.push('/')} className="btn bg-white-300 font-bold py-2 px-4 rounded inline-flex items-center shadow-md">
+             <span className="iconify" data-icon="bi:arrow-left" data-inline="false"></span>
+            <span>Back</span>
+            </button>
         </Div>
     )
 }

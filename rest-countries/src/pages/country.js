@@ -20,6 +20,7 @@ const CountryPage = ({ match }) => {
         <>
         <CardDetails info={countryInfo} />
         </>
+        
     )
 }
 

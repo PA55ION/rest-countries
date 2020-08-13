@@ -3,17 +3,36 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import BackButton from "./BackButton";
 import BorderBtn from "./BorderBtn";
+// import { Link } from "react-router-dom";
 
-const ImageWrapper = styled.div`
-    padding: 12px 50px;
-`;
+// const ImageWrapper = styled.div`
+//     padding: 12px 50px;
+// `;
 
 const FlagImg = styled.img`
   width: 100%;
-  height: 100%;
-  max-width: 560px;
+  height: auto;
+//   heigth: 550px;
+  max-width: 660px;
   object-fit: cover;
+
 `;
+
+// const Country = ({ data, match, history }) => {
+//   const country = data.find(
+//     (country) => country.alpha3Code === match.params.alpha3Code
+//   );
+//   const countryBordersNames = (border) => {
+//     const datas = [...data].filter(({ alpha3Code }) => alpha3Code === border);
+//     return (
+//       <Link
+//         to={`/country/${datas[0].alpha3Code}`}
+//         key={border}
+//       >
+//         {datas[0].name}
+//       </Link>
+//     );
+//   };
 
 const CardDetails = ({ info }) => {
   console.log(info);
@@ -24,20 +43,22 @@ const CardDetails = ({ info }) => {
     capital,
     population,
     region,
+    borders,
     subregion,
     topLevelDomain,
     currencies,
     languages,
-    borders,
   } = info;
   return (
+      <div>
+            <BackButton />
+
     <div className="container">
-      <BackButton />
-      <ImageWrapper>
+      <div className='img-wrapper'>
         <FlagImg src={flag} alt={name}></FlagImg>
-      </ImageWrapper>
+      </div>
       <div className="country-detail">
-        <h2>{name}</h2>
+        <h2 className="country">{name}</h2>
         <p>Native Name: <span> {nativeName}</span></p>
         <p>Population:<span> {population}</span></p>
         <p>Region:<span> {region}</span></p>
@@ -66,13 +87,15 @@ const CardDetails = ({ info }) => {
         </p>
       </div>
       <div className='border-country'>
-      <p>Border Country: </p>
+      <p className='borders'>Border Countries: </p>
         <div>
+            {/* {borders.length === 0 `${name} doesn't have any neighbor`} */}
             {borders && borders.map((border, index) => (
                <BorderBtn key={index} code={border} /> 
             ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

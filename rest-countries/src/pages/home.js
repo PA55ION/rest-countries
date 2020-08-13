@@ -35,6 +35,7 @@ const HomePage = () => {
                 value={region}
                 onChange={(event) => setRegion(event.target.value)}
                 onPointerLeave={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)}
+               
             />
             <React.Fragment>             
              {isLoading && <SkeletonCard />}
@@ -49,9 +50,6 @@ const HomePage = () => {
                   alpha3Code={data.alpha3Code}
                 />
                 ))}
-             
-           
-                {/* <SkeletonCard /> */}
             </React.Fragment>
             </div>
     )
