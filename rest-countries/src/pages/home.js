@@ -22,7 +22,7 @@ const HomePage = () => {
                 value={country}
                 onChange={(event) => setCountry(event.target.value)}
                 onClick={() =>
-                doFetch(`https://restcountries.eu/rest/v2/name/${country}`)
+                doFetch(`https://restcountries.eu/rest/v2/alls}`)
                 }
                 onKeyPress={event => {
                     if (event.key === 'Enter') {

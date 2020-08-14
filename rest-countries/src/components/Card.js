@@ -11,9 +11,10 @@ const ListItems = styled.div`
     border-top-right-radius: 8px;
     margin: 75px 0 10px 85px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
-     &:hover {
-    animation: pulse;
-    animation-duration: 1.5s;
+      &:hover {
+    animation: headShake;
+    animation-duration: .5s;
+    
   }
 
     @media only screen and(max-width:450px) {
@@ -56,8 +57,6 @@ const Image = styled.div`
 
   img {
     width: 100%;
-
-
     align-self: stretch;
     object-fit: cover;
   }
