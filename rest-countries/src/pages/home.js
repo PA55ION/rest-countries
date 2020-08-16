@@ -37,19 +37,25 @@ const HomePage = () => {
                 onPointerLeave={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)}
                
             />
-            <React.Fragment>             
-             {isLoading && <SkeletonCard />}
-                {data.map((data, index) => (
-                <Card
-                  key={data.index}
-                  flag={data.flag}
-                  name={data.name}
-                  population={data.population}
-                  region={data.region}
-                  capital={data.capital}
-                  alpha3Code={data.alpha3Code}
-                />
-                ))}
+            <React.Fragment> 
+             {isLoading && <div>Something went wrong</div>}            
+             {isLoading ? (
+             <SkeletonCard /> 
+             ) : (
+                 <div>
+                      {data.map((data, index) => (
+                    <Card
+                      key={data.index}
+                      flag={data.flag}
+                      name={data.name}
+                      population={data.population}
+                      region={data.region}
+                      capital={data.capital}
+                      alpha3Code={data.alpha3Code}
+                    />
+                    ))}
+                 </div>
+             )}
             </React.Fragment>
             </div>
     )

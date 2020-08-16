@@ -11,8 +11,7 @@ import BorderBtn from "./BorderBtn";
 
 const FlagImg = styled.img`
   width: 100%;
-  max-height: 750px;
-  max-width: 660px;
+  max-width: 550px;
   object-fit: cover;
 `;
 
@@ -54,8 +53,11 @@ const CardDetails = ({ info }) => {
             <div className='img-wrapper'>
                 <FlagImg src={flag} alt={name}></FlagImg>
             </div>
-            <h3 className="country">{name}</h3>
+            <div className='country-name'>
+                    <h3 className="country">{name}</h3>
+            </div>
             <div className="country-detail">
+                {/* <div className="row"> */}
                 <p>Native Name: <span> {nativeName}</span></p>
                 <p>Population:<span> {population}</span></p>
                 <p>Region:<span> {region}</span></p>
@@ -83,14 +85,14 @@ const CardDetails = ({ info }) => {
                 })}
                 </p>
             </div>
+            {/* </div> */}
             <div className='border-country'>
-            <p className='borders'>Border Countries: </p>
-                <div>
+            <p className='borders'>Border Countries: 
                     {/* {borders.length === 0 `${name} doesn't have any neighbor`} */}
                     {borders && borders.map((border, index) => (
                     <BorderBtn key={index} code={border} /> 
                     ))}
-                </div>
+            </p>
             </div>
         </div>
     </div>
