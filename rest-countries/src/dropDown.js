@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Select = styled.select`
   max-width: 100%;
   height: 50px;
-  padding: 14px 25px;
+  padding: 10px 12px;
   margin: 5px 20px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -19,6 +19,14 @@ const Select = styled.select`
     position: absolute;
     right: 10%;
     white-space: nowrap;
+}
+@media (min-width: 1024px) {
+    padding-right: 20px;
+    right: 3%;
+}
+
+@media (min-width: 1400px) {
+    
 }
 `;
 

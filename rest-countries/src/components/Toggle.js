@@ -10,7 +10,7 @@ const Toggle = ({ theme, toggleTheme, history }) => {
           Where in the world ?
         </span>
       </div>
-      <div className='pr-4'>
+      <div className='dark-mode-btn pr-4'>
         <button
           onClick={toggleTheme}
           className="flex items-center text-sm px-4 py-2 lg:mt-0 border none"

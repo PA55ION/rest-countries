@@ -77,6 +77,12 @@ nav {
   box-shadow: 0 3px 3px -3px black;
 }
 
+.search-icon {
+  padding-left: 24px;
+  margin-top: -30px;
+  color: red;
+} 
+
 @media (min-width: 768px) {
   .container {
     padding: 0;
@@ -110,6 +116,6 @@ nav {
     padding: 0 .5rem;
   }
   .title {
-    padding-left: 60px;
+    padding-left: 65px;
   }
 } 

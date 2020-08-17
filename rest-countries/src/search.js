@@ -6,7 +6,7 @@ const Input = styled.input.attrs(props => ({
       type: 'text',
     }))`
     max-width: 100%;
-    padding: 14px 25px;
+    padding: 14px 65px;
     text-align: left;
     height: 50px;
     margin: 45px 20px;
@@ -34,8 +34,11 @@ const Wrapper = styled.div`
   @media (min-width: 638px) {
     width: 350px;
     height: 50px;
-    // padding-left: 55px;
    }
+   @media (min-width: 1024px) {
+     width: 500px;
+     margin-left: 3.9rem;
+  }
 `;
 
 const Button = styled.a`
@@ -55,8 +58,8 @@ class SearchBox extends React.Component {
           onClick={onClick}
         >
         </Button>
-        <span className="z-10 h-full leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-        <ion-icon name="search-outline"></ion-icon>
+        <span className="z-10 h-full leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-5 py-6 px-5 my-8 mx-5">
+        <ion-icon name="search-outline" className='search-icon'></ion-icon>
         </span>
         <Input
           placeholder="Search for a country..."
@@ -65,6 +68,14 @@ class SearchBox extends React.Component {
           onChange={onChange}
           onKeyPress={onKeyPress}
         />
+
+
+{/* <div class="relative flex w-full flex-wrap items-stretch mb-3">
+  <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+  <ion-icon name="search-outline"></ion-icon>
+  </span>
+  <input type="text" placeholder="Placeholder" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+</div> */}
       </Wrapper>
     );
   }
