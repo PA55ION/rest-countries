@@ -25,6 +25,8 @@ html, body {
 .container {
     display: grid;
     width: 100vw;
+    margin-top: 25px;
+    border: 1px solid salmon;
 }
 
 .country-detail, 
@@ -75,7 +77,6 @@ nav {
   box-shadow: 0 3px 3px -3px black;
 }
 
-
 @media (min-width: 768px) {
   .container {
     padding: 0;
@@ -87,7 +88,7 @@ nav {
   }
   .country-name {
     grid-area: country-name;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem .5rem;
   }
   .img-wrapper {
     grid-area: img-wrapper;
@@ -107,5 +108,8 @@ nav {
   .border-country {
     grid-area: border-country;
     padding: 0 .5rem;
+  }
+  .title {
+    padding-left: 60px;
   }
 } 

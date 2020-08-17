@@ -2,6 +2,22 @@ import React, { useState, useEffect }from 'react';
 import axios from 'axios';
 import CardDetails from '../components/CardDetails'
 
+// const Country = ({ data, match, history }) => {
+//   const country = data.find(
+//     (country) => country.alpha3Code === match.params.alpha3Code
+//   );
+//   const countryBordersNames = (border) => {
+//     const datas = [...data].filter(({ alpha3Code }) => alpha3Code === border);
+//     return (
+//       <Link
+//         to={`/country/${datas[0].alpha3Code}`}
+//         key={border}
+//       >
+//         {datas[0].name}
+//       </Link>
+//     );
+//   };
+
 
 const CountryPage = ({ match }) => {
     const [countryInfo, setCountryInfo] = useState([]);

@@ -3,11 +3,6 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import BackButton from "./BackButton";
 import BorderBtn from "./BorderBtn";
-// import { Link } from "react-router-dom";
-
-// const ImageWrapper = styled.div`
-//     padding: 12px 50px;
-// `;
 
 const FlagImg = styled.img`
   width: 100%;
@@ -15,21 +10,6 @@ const FlagImg = styled.img`
   object-fit: cover;
 `;
 
-// const Country = ({ data, match, history }) => {
-//   const country = data.find(
-//     (country) => country.alpha3Code === match.params.alpha3Code
-//   );
-//   const countryBordersNames = (border) => {
-//     const datas = [...data].filter(({ alpha3Code }) => alpha3Code === border);
-//     return (
-//       <Link
-//         to={`/country/${datas[0].alpha3Code}`}
-//         key={border}
-//       >
-//         {datas[0].name}
-//       </Link>
-//     );
-//   };
 
 const CardDetails = ({ info }) => {
   console.log(info);
@@ -88,10 +68,9 @@ const CardDetails = ({ info }) => {
             {/* </div> */}
             <div className='border-country'>
             <p className='borders'>Border Countries: 
-                    {/* {borders.length === 0 `${name} doesn't have any neighbor`} */}
-                    {borders && borders.map((border, index) => (
-                    <BorderBtn key={index} code={border} /> 
-                    ))}
+                    {borders && borders.map((border, index) => {
+                        return <BorderBtn key={index} code={border} /> 
+                    })}
             </p>
             </div>
         </div>

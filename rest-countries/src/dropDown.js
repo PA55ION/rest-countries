@@ -4,21 +4,29 @@ import styled from "styled-components";
 
 const Select = styled.select`
   max-width: 100%;
-  width: 45%;
-  height: 45px;
-  padding-left: 12px;
+  height: 50px;
+  padding: 14px 25px;
+  margin: 5px 20px;
   border-radius: 4px;
-  border: 2px solid #ccc;
-  margin: 20px;
+  border: 1px solid #ccc;
   font-family: "Nunito Sans", sans-serif;
   background: ${({ theme }) => theme.inputBackground};
   color: ${({ theme }) => theme.text};
+  @media (min-width: 638px) {
+    width: 200px;
+    margin: -5px 0 0 20px;
+    padding-right: 20px;
+    position: absolute;
+    right: 10%;
+    white-space: nowrap;
+}
 `;
 
 const DropDown = (props) => {
     console.log(props)
     return (
         <form>
+            <div className='dropdown'>
          <Select 
             value={props.region} 
             onChange={props.onChange} 
@@ -31,6 +39,7 @@ const DropDown = (props) => {
             <option value="europe">Europe</option>
             <option value="oceania">Oceania</option>
         </Select> 
+        </div>
         </form>
     )
 }

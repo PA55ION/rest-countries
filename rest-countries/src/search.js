@@ -8,10 +8,10 @@ const Input = styled.input.attrs(props => ({
     max-width: 100%;
     padding: 14px 25px;
     text-align: left;
-    height: 45px;
-    margin: 20px;
+    height: 50px;
+    margin: 45px 20px;
     border-radius: 6px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     background: ${({ theme }) => theme.inputBackground};
@@ -31,6 +31,11 @@ const Input = styled.input.attrs(props => ({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media (min-width: 638px) {
+    width: 350px;
+    height: 50px;
+    // padding-left: 55px;
+   }
 `;
 
 const Button = styled.a`
@@ -49,12 +54,10 @@ class SearchBox extends React.Component {
         <Button 
           onClick={onClick}
         >
-          <ion-icon name="search-outline"></ion-icon>
         </Button>
         <span className="z-10 h-full leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-      <ion-icon name="search-outline"></ion-icon>
+        <ion-icon name="search-outline"></ion-icon>
         </span>
-        <Input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Search for a country..." />
         <Input
           placeholder="Search for a country..."
           type={type}

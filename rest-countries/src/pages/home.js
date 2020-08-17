@@ -35,13 +35,13 @@ const HomePage = () => {
                 value={region}
                 onChange={(event) => setRegion(event.target.value)}
                 onPointerLeave={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)}
-               
             />
             <React.Fragment> 
              {isLoading && <div>Something went wrong</div>}            
              {isLoading ? (
-             <SkeletonCard /> 
-             ) : (
+            //  <SkeletonCard/> 
+            <div>Loading...</div>
+             ) : ( 
                  <div>
                       {data.map((data, index) => (
                     <Card

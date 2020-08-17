@@ -12,7 +12,6 @@ const Button = styled.button`
 
     @media (min-width: 768px) {
         margin-left: 30px;
-
     }
 `;
 
