@@ -3,8 +3,8 @@ import axios from 'axios'
 
 const useRestCountryApi = () => {
     const [data, setData] = useState([]);
-    const [url, setUrl] = useState();
-    const [regionUrl, setRegionUrl] = useState(`https://restcountries.eu/rest/v2/region/asia`)
+    const [url, setUrl] = useState('https://restcountries.eu/rest/v2/all');
+    const [regionUrl, setRegionUrl] = useState()
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading]= useState(false);
 

@@ -42,6 +42,7 @@ const Wrapper = styled.div`
 
 const Icon = styled.div`
   color: ${({ theme }) => theme.text};
+  color: #ccc;
 `;
 
 const Button = styled.a`

@@ -22,7 +22,7 @@ const HomePage = () => {
                 value={country}
                 onChange={(event) => setCountry(event.target.value)}
                 onClick={() =>
-                doFetch(`https://restcountries.eu/rest/v2/alls}`)
+                doFetch(`https://restcountries.eu/rest/v2/all}`)
                 }
                 onKeyPress={event => {
                     if (event.key === 'Enter') {
@@ -37,7 +37,7 @@ const HomePage = () => {
                 onPointerLeave={() =>  fetchRegion(`https://restcountries.eu/rest/v2/region/${region}`)}
             />
             <React.Fragment> 
-             {isLoading && <div>Something went wrong</div>}            
+             {isLoading && <div>Something went wrong...</div>}            
              {isLoading ? (
             //  <SkeletonCard/> 
             <div>Loading...</div>
@@ -54,7 +54,7 @@ const HomePage = () => {
                       alpha3Code={data.alpha3Code}
                     />
                     ))}
-                 </div>
+                </div>
              )}
             </React.Fragment>
             </div>
