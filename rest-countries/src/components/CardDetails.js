@@ -37,7 +37,6 @@ const CardDetails = ({ info }) => {
                     <h3 className="country">{name}</h3>
             </div>
             <div className="country-detail">
-                {/* <div className="row"> */}
                 <p>Native Name: <span> {nativeName}</span></p>
                 <p>Population:<span> {population}</span></p>
                 <p>Region:<span> {region}</span></p>
@@ -65,7 +64,6 @@ const CardDetails = ({ info }) => {
                 })}
                 </p>
             </div>
-            {/* </div> */}
             <div className='border-country'>
             <p className='borders'>Border Countries: 
                     {borders && borders.map((border, index) => {
