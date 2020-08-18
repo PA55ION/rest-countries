@@ -7,12 +7,11 @@ const ListItems = styled.div`
     width: 250px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    margin: 105px 0 10px 85px;
+    margin: 105px 0 5px 85px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
       &:hover {
     animation: headShake;
     animation-duration: .5s;
-    
   }
 
     @media only screen and(max-width:450px) {

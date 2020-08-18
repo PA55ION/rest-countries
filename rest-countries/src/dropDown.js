@@ -17,17 +17,17 @@ const Select = styled.select`
     margin: -5px 0 0 20px;
     padding-right: 20px;
     position: absolute;
-    right: 10%;
+    right: 7%;
     white-space: nowrap;
 }
-@media (min-width: 1024px) {
-    padding-right: 20px;
-    right: 3%;
-}
+// @media (min-width: 1024px) {
+//     padding-right: 20px;
+//     right: 3%;
+// }
 
-@media (min-width: 1400px) {
-    
-}
+// @media (min-width: 1360px) {
+//     right: 2%;
+// }
 `;
 
 const DropDown = (props) => {

@@ -118,4 +118,7 @@ nav {
   .title {
     padding-left: 65px;
   }
-} 
+  .dark-mode-btn {
+    margin-right: 55px;
+  }
+}
