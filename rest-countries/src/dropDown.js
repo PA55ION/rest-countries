@@ -20,14 +20,13 @@ const Select = styled.select`
     right: 7%;
     white-space: nowrap;
 }
-// @media (min-width: 1024px) {
-//     padding-right: 20px;
-//     right: 3%;
-// }
+@media (min-width: 814px) {
+    right: 3%;
+}
 
-// @media (min-width: 1360px) {
-//     right: 2%;
-// }
+@media (min-width: 1200px) {
+    right: 9%;
+}
 `;
 
 const DropDown = (props) => {

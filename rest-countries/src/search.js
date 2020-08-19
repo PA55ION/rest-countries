@@ -57,6 +57,7 @@ class SearchBox extends React.Component {
   render() {
     const { type, value, onChange, onClick, onKeyPress } = this.props;
     return (
+      <form>
       <Wrapper>
         <Button onClick={onClick}></Button>
         <span className="z-10 h-full leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-5 py-6 px-5 my-8 mx-5">
@@ -72,6 +73,7 @@ class SearchBox extends React.Component {
           onKeyPress={onKeyPress}
         />
       </Wrapper>
+      </form>
     );
   }
 }

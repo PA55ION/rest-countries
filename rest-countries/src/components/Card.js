@@ -3,28 +3,39 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 const ListItems = styled.div`
-    display: inline-block;
-    width: 250px;
+    // display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 250px;
+    width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    margin: 105px 0 5px 85px;
+    margin: 105px 50px 5px 50px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
       &:hover {
     animation: headShake;
     animation-duration: .5s;
   }
 
-    @media only screen and(max-width:450px) {
-    display: flex;
-    justify-content: space-center;
-    align-items: space-center;
-    flex-direction: column;
+    @media screen and (min-width: 450px) {
+     margin-left: 85px;
+     margin-right: 85px;
+  }
+  @media screen and (min-width: 620px) {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: 85px;
+    margin-right: -15px;
+  }
+  @media screen and (min-width: 1400px) {
+    margin-left: 95px;
+    margin-right: 10px;
   }
 
-  // @media only screen and(min-width:768px) {
-  //   margin-left: 300px;
-  // }
-}
 `;
 
 const ImageWrapper = styled.div`
@@ -108,6 +119,7 @@ class Card extends React.Component {
       >
         <ImageWrapper>
           <Image style={{ backgroundImage: `url(${flag})` }}></Image>
+          {/* <Image src={flag} alt={name}></Image> */}
         </ImageWrapper>
         <Content>
           <TextContent>
@@ -123,6 +135,18 @@ class Card extends React.Component {
             </Text>
           </TextContent>
         </Content>
+{/* <div class="border border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+  <div class="animate-pulse flex space-x-4">
+    <div class="rounded-full bg-gray-400 h-12 w-12"></div>
+    <div class="flex-1 space-y-4 py-1">
+      <div class="h-4 bg-gray-400 rounded w-3/4"></div>
+      <div class="space-y-2">
+        <div class="h-4 bg-gray-400 rounded"></div>
+        <div class="h-4 bg-gray-400 rounded w-5/6"></div>
+      </div>
+    </div>
+  </div> 
+</div> */}
       </ListItems>
     );
   }

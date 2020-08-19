@@ -66,6 +66,19 @@ ion-icon {
   padding: 3px 10px;
 }
 
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  -webkit-transform: translate(-40%, -50%);
+  -moz-transform: translate(-40%, -50%);
+  -ms-transform: translate(-40%, -50%);
+  -o-transform: translate(-40%, -50%);
+}
+
+
+
 a:hover {
     animation: pulse;
     animation-duration: 1.5s;
@@ -115,3 +128,25 @@ nav {
     margin-right: 55px;
   }
 }
+
+@media screen and (min-width: 814px) {
+  .title {
+    padding-left: .5rem;
+  }
+  .dark-mode-btn {
+    margin-right: -15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    padding-left: 3.75rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .dark-mode-btn {
+    margin-right: 5.75rem;
+  }
+}
+

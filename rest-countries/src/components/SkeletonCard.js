@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import styled from 'styled-components';
 
@@ -40,7 +40,7 @@ const SkeletonCard = () => {
         // highlightColor={isDarkTheme ? '#495175' : '#e6e6e6'}
       >
         <Wrapper>
-         {Array(1)
+         {Array(16)
             .fill()
             .map((item, index) => (
         <Overlay key={index}>

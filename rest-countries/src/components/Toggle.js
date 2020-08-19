@@ -6,7 +6,7 @@ const Toggle = ({ theme, toggleTheme, history }) => {
   return (
     <nav className="flex items-center justify-between flex-wrap p-4">
       <div className="flex items-center flex-shrink-0 mr-6">
-        <span  className="title font-semibold text-xl tracking-tight">
+        <span  className="title font-semibold text-xl tracking-tight leading-tight">
           Where in the world ?
         </span>
       </div>
