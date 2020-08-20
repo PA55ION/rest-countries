@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 const ListItems = styled.div`
-    // display: inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,8 +31,7 @@ const ListItems = styled.div`
     margin-right: -15px;
   }
   @media screen and (min-width: 1400px) {
-    margin-left: 95px;
-    margin-right: 10px;
+    margin-right: -10px;
   }
 
 `;

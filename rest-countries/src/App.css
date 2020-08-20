@@ -144,7 +144,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .dark-mode-btn {
     margin-right: 5.75rem;
   }

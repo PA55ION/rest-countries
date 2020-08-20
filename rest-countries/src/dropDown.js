@@ -8,10 +8,11 @@ const Select = styled.select`
   padding: 10px 12px;
   margin: 5px 20px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   font-family: "Nunito Sans", sans-serif;
   background: ${({ theme }) => theme.inputBackground};
   color: ${({ theme }) => theme.text};
+  border: ${({ theme }) => theme.toggleBorder};
   @media (min-width: 638px) {
     width: 200px;
     margin: -5px 0 0 20px;
@@ -24,7 +25,7 @@ const Select = styled.select`
     right: 3%;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     right: 9%;
 }
 `;

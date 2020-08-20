@@ -12,8 +12,10 @@ const Input = styled.input.attrs((props) => ({
   border-radius: 6px;
   border: 1px solid #ccc;
   font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   font-size: 16px;
   background: ${({ theme }) => theme.inputBackground};
+  border: ${({ theme }) => theme.toggleBorder};
   color: ${({ theme }) => theme.text};
   &:focus {
     border-color: ${({ theme }) => theme.blue};
