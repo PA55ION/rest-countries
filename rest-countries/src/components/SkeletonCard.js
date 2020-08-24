@@ -6,15 +6,12 @@ const Wrapper = styled.div`
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.25);
   background-color: ${({ theme }) => theme.element};
   border-radius: 8px;
-  // transition: 0.3s opacity, 0.3s visibility;
-  display: inline-block;
+  transition: 0.3s opacity, 0.3s visibility;
   width: 250px;
-  border: 1px solid green;
+ 
 `;
 
 const Content = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: 15px 20px 0 5px;
 `;
 const Text = styled.p`
@@ -32,7 +29,6 @@ const Overlay = styled.div`
 `;
 
 const SkeletonCard = () => {
-
   return (
       <SkeletonTheme
         color="#202020" highlightColor="#444"
@@ -48,16 +44,16 @@ const SkeletonCard = () => {
     
         <Content>
           <Header>
-            <Skeleton width="30%" />
+            <Skeleton width="60%" />
           </Header>
           <Text>
-            <Skeleton width="35%" />
+            <Skeleton width="70%" />
           </Text>
           <Text>
-            <Skeleton width="40%" />
+            <Skeleton width="80%" />
           </Text>
           <Text>
-            <Skeleton width="30%" />
+            <Skeleton width="90%" />
           </Text>
         </Content>
         </Overlay>

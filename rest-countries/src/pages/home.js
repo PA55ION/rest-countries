@@ -78,7 +78,7 @@ const HomePage = (props) => {
           </div>
         )}
         {isLoading ? (
-          <div className="loading">Loading...</div>
+            <div className="loading">Loading...</div>
         // <img src={Spinner} alt="loading-spinner" />
         ) : (
           <div>
