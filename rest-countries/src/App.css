@@ -49,7 +49,7 @@ html, body {
 
 p {
   font-family: 'Nunito Sans', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2;
 }
 
@@ -58,7 +58,7 @@ p {
 }
 
 span {
-  font-weight: 500;
+  font-weight: 300;
 }
 
 ion-icon {
@@ -66,7 +66,7 @@ ion-icon {
   padding: 3px 10px;
 }
 
-.error {
+.error, .loading{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -76,8 +76,6 @@ ion-icon {
   -ms-transform: translate(-40%, -50%);
   -o-transform: translate(-40%, -50%);
 }
-
-
 
 a:hover {
     animation: pulse;

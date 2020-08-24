@@ -31,14 +31,13 @@ const Select = styled.select`
 `;
 
 const DropDown = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <form>
             <div className='dropdown'>
          <Select 
             value={props.region} 
             onChange={props.onChange} 
-            onPointerLeave={props.onPointerLeave }
          >
             <option>Filter by region</option>
             <option value="africa">Africa</option>

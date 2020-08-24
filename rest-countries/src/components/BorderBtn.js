@@ -14,11 +14,11 @@ const Border = styled.button`
     }
 `;
 
-const BorderBtn = ({ code, history}) => {
+const BorderBtn = ({ country, history}) => {
     return (
         <>
-        <Border onClick={() => history.push(`/country/${code}`)} className="btn bg-white text-grey-400 font-bold uppercase text-xs px-10 py-1 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4" type="button" style={{transition: "all .15s ease" }}>
-        {code}
+        <Border onClick={() => history.push(`/country/${country}`)} className="btn bg-white text-grey-400 font-bold uppercase text-xs px-10 py-1 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4" type="button" style={{transition: "all .15s ease" }}>
+        {country}
         </Border>
         </>
     )

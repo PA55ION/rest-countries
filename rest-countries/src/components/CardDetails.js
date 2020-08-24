@@ -24,8 +24,10 @@ const CardDetails = ({ info }) => {
     subregion,
     topLevelDomain,
     currencies,
+    alpha3Code,
     languages,
   } = info;
+
   return (
       <div className='main-container'>
         <BackButton />
@@ -67,7 +69,7 @@ const CardDetails = ({ info }) => {
             <div className='border-country'>
             <p className='borders'>Border Countries: 
                     {borders && borders.map((border, index) => {
-                        return <BorderBtn key={index} code={border} /> 
+                        return <BorderBtn key={index} country={border} /> 
                     })}
             </p>
             </div>

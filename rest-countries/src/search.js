@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = styled.input.attrs((props) => ({
-  type: "text",
-}))`
+const Input = styled.input`
   max-width: 100%;
   padding: 14px 65px;
   text-align: left;
@@ -57,22 +55,23 @@ const Button = styled.a`
 
 class SearchBox extends React.Component {
   render() {
-    const { type, value, onChange, onClick, onKeyPress } = this.props;
+          console.log(this.props)
+    const { type, value, onChange } = this.props;
     return (
       <form>
       <Wrapper>
-        <Button onClick={onClick}></Button>
+        <Button></Button>
         <span className="z-10 h-full leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-5 py-6 px-5 my-8 mx-5">
           <Icon>
             <ion-icon name="search-outline"></ion-icon>
           </Icon>
         </span>
         <Input
-          placeholder="Search for a country..."
           type={type}
+          placeholder="Search for a country..."
           value={value}
           onChange={onChange}
-          onKeyPress={onKeyPress}
+          className="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none"
         />
       </Wrapper>
       </form>

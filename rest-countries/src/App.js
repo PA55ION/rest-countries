@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Toggle from "./components/Toggle";
 import { useDarkMode } from "./components/useDarkMode";

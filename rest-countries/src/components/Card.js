@@ -3,23 +3,23 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 const ListItems = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 250px;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    margin: 105px 50px 5px 50px;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
-      &:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 250px;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: 85px 50px 5px 50px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  &:hover {
     animation: headShake;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
   }
 
-    @media screen and (min-width: 450px) {
-     margin-left: 85px;
-     margin-right: 85px;
+  @media screen and (min-width: 450px) {
+    margin-left: 85px;
+    margin-right: 85px;
   }
   @media screen and (min-width: 620px) {
     display: inline-block;
@@ -33,7 +33,6 @@ const ListItems = styled.div`
   @media screen and (min-width: 1400px) {
     margin-right: -10px;
   }
-
 `;
 
 const ImageWrapper = styled.div`
@@ -82,7 +81,7 @@ const TextContent = styled.div`
 
 const CountryName = styled.h2`
   font-family: "Nunito Sans", sans-serif;
-  font-weight: bolder;
+  font-weight: 800;
   font-size: 20px;
   margin: 1rem 0 0.5rem;
   padding-bottom: 0.5rem;
@@ -117,7 +116,6 @@ class Card extends React.Component {
       >
         <ImageWrapper>
           <Image style={{ backgroundImage: `url(${flag})` }}></Image>
-          {/* <Image src={flag} alt={name}></Image> */}
         </ImageWrapper>
         <Content>
           <TextContent>
@@ -133,18 +131,6 @@ class Card extends React.Component {
             </Text>
           </TextContent>
         </Content>
-{/* <div class="border border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-  <div class="animate-pulse flex space-x-4">
-    <div class="rounded-full bg-gray-400 h-12 w-12"></div>
-    <div class="flex-1 space-y-4 py-1">
-      <div class="h-4 bg-gray-400 rounded w-3/4"></div>
-      <div class="space-y-2">
-        <div class="h-4 bg-gray-400 rounded"></div>
-        <div class="h-4 bg-gray-400 rounded w-5/6"></div>
-      </div>
-    </div>
-  </div> 
-</div> */}
       </ListItems>
     );
   }
